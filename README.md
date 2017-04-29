@@ -10,7 +10,7 @@
 * [License](#feature6)
 * [Additional information](#feature7)
 * [How Starter site is look like](#feature8)
-* [Advanced Alternatives](#feature9)
+* [Crud Generator](#feature9)
 
 <a name="feature1"></a>
 ## Starter Site Features:
@@ -93,9 +93,13 @@ And to initial populate database use this:
 
     php artisan db:seed
 
-If you install on your localhost in folder laravel5startersite, you can type on web browser:
+If you install on your localhost in folder laravelStartersite, you can type on web browser:
 
-	http://localhost/laravel5startersite/public
+	http://localhost/laravelStartersite/public
+
+OR Run the command " php artisan serv ", and open on the browser the url you get in console :):
+
+
 -----
 <a name="step5"></a>
 ### Step 5: Start Page
@@ -131,28 +135,23 @@ This is free software distributed under the terms of the MIT license
 <a name="feature7"></a>
 ## Additional information
 
-Inspired by and based on [andrew13's Laravel-4-Bootstrap-Starter-Site](https://github.com/andrew13/Laravel-4-Bootstrap-Starter-Site)
-
+Inspired by Laravel 5.4 and based on:
+[Crud Generator](https://github.com/roladn/laravelcrud)
+[Gentelella Dashboard](https://goo.gl/NI1sGa)
+[Sentinel Authentication](https://cartalyst.com/manual/sentinel/2.0)
 ----
 <a name="feature8"></a>
 ##How Starter Site is look like
 
-![Index](http://prntscr.com/f258sh)
-![Login](http://i58.tinypic.com/r7p4et.jpg)
-![Register new user](http://i61.tinypic.com/fvcz5x.jpg)
-![Admin dashboard](http://i58.tinypic.com/b9g2g1.jpg)
-![Admin users](http://i60.tinypic.com/301hemp.jpg)
-![Admin list users](http://i58.tinypic.com/2ujl5dh.jpg)
+![Index](http://i63.tinypic.com/315onf8.png)
+![Login](http://i64.tinypic.com/23vku8w.png)
+![Register new user](http://i63.tinypic.com/21jaybp.png)
+![Admin dashboard](http://i66.tinypic.com/a4bj9l.png)
+![Admin list users](http://i63.tinypic.com/2ivzio9.png)
+![Perrmissons user/role ](http://i67.tinypic.com/35jgn52.png)
 
 ----
 <a name="feature9"></a>
-## Advanced alternatives
-If you are interested in advanced starter sites where you can get 70+ admin pages, 20+ frontend pages with color schemes and a CRUD generator then visit below links
-
-[Roland Alla](http://rolandalla.com)
-
-[Crud Generator](https://github.com/roladn/laravelcrud)
-
-[Sentinel Authentication](https://cartalyst.com/manual/sentinel/2.0)
-
-[Gentelella Dashboard](https://goo.gl/NI1sGa)
+## Crud Generator
+If you are interested in  CRUD Generator then visit below links
+[Crud Generator](https://github.com/roladn/laravelcrud#commands)
