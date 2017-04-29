@@ -5,7 +5,6 @@
 * [Features](#feature1)
 * [Requirements](#feature2)
 * [How to install](#feature3)
-* [Application Structure](#feature4)
 * [Troubleshooting](#feature5)
 * [License](#feature6)
 * [Additional information](#feature7)
@@ -53,8 +52,10 @@
 -----
 <a name="step1"></a>
 ### Step 1: Get the code - Download the repository
-
-    https://github.com/roladn/laravel-sentinel-crud-starter.git
+	https://github.com/roladn/laravel-sentinel-crud-starter/archive/master.zip 
+    
+    OR Clone this repository:
+     https://github.com/roladn/laravel-sentinel-crud-starter.git
 
 Extract it in www(or htdocs if you using XAMPP or MAMP) folder and put it for example in laravelStartersite folder.
 
@@ -153,5 +154,21 @@ Inspired by Laravel 5.4 and based on:
 ----
 <a name="feature9"></a>
 ## Crud Generator
-If you are interested in  CRUD Generator then visit below links
+Note: You should have configured database for this operation.
+
+## Commands
+
+#### Crud command:
+
+```
+php artisan crud:generate Posts --fields="title:string, body:text"
+```
+
+You can also easily include route, set primary key, set views directory etc through options **--route**, **--pk**, **--view-path** as belows:
+
+```
+php artisan crud:generate Posts --fields="title:string:required, body:text:required" --route=yes --pk=id --view-path="admin" --namespace=Admin --route-group=admin
+```
+
+If you are interested in  CRUD Generator then visit below links for more commands
 [Crud Generator](https://github.com/roladn/laravelcrud#commands)
