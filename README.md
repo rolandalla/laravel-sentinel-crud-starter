@@ -1,9 +1,7 @@
-# laravel-sentinel-crud-starter
-This is a Starter Laravel project ,using the Sentinel Authentication ,User Role ,User Perrmisson,Role perrmisson, Crud Generator by simple artisan commands
 
-# Laravel Framework 5.1  Bootstrap 3 Starter Site
+# Laravel Framework 5.4 ,Sentinel,Crud Generator
 
-## Starter Site based on on Laravel 5.1 and Boostrap 3
+## Starter Site based on on Laravel 5.4 
 * [Features](#feature1)
 * [Requirements](#feature2)
 * [How to install](#feature3)
@@ -16,35 +14,32 @@ This is a Starter Laravel project ,using the Sentinel Authentication ,User Role 
 
 <a name="feature1"></a>
 ## Starter Site Features:
-* Laravel 5.1.x
+* Laravel 5.4.x
 * Twitter Bootstrap 3.x
 * Back-end
 	* Automatic install and setup website.
 	* User management.
-	* Manage languages.
-	* Manage photos and photo albums.
-	* Manage article and article categories.
-    * DataTables dynamic table sorting and filtering.
-    * Colorbox jQuery modal popup.
-    * Add Summernote WYSIWYG in textareas.
+	* Role management.
+	* Dashboard.
+	* Gentelella Dashboard Ready.
 * Front-end
 	* User login, registration
-	* View Photos,Articles, Languages and Users
 	* soon will be more...
 * Packages included:
 	* Datatables Bundle
+	* Sentinel
+	* Crud generator
 
 -----
 <a name="feature2"></a>
 ##Requirements
 
-	PHP >= 5.5.9
+	PHP >= 5.6.4
 	OpenSSL PHP Extension
+	PDO PHP Extension
 	Mbstring PHP Extension
 	Tokenizer PHP Extension
-	SQL server(for example MySQL)
-	Composer
-	Node JS
+	XML PHP Extension
 
 -----
 <a name="feature3"></a>
@@ -59,9 +54,9 @@ This is a Starter Laravel project ,using the Sentinel Authentication ,User Role 
 <a name="step1"></a>
 ### Step 1: Get the code - Download the repository
 
-    https://github.com/mrakodol/Laravel-5-Bootstrap-3-Starter-Site/archive/master.zip
+    https://github.com/roladn/laravel-sentinel-crud-starter.git
 
-Extract it in www(or htdocs if you using XAMPP) folder and put it for example in laravel5startersite folder.
+Extract it in www(or htdocs if you using XAMPP or MAMP) folder and put it for example in laravelStartersite folder.
 
 -----
 <a name="step2"></a>
@@ -71,7 +66,7 @@ Laravel utilizes [Composer](http://getcomposer.org/) to manage its dependencies.
 Once you have the PHAR archive, you can either keep it in your local project directory or move to
 usr/local/bin to use it globally on your system.
 On Windows, you can use the Composer [Windows installer](https://getcomposer.org/Composer-Setup.exe).
-
+Open terminal and go to the project foleder
 Then run:
 
     composer dump-autoload
@@ -83,6 +78,7 @@ Then run:
 
 If you finished first three steps, now you can create database on your database server(MySQL). You must create database
 with utf-8 collation(uft8_general_ci), to install and application work perfectly.
+Just go to the phpmyadmin and create the new database
 After that, copy .env.example and rename it as .env and put connection and change default database connection name, only database connection, put name database, database username and password.
 
 -----
