@@ -85,20 +85,6 @@ After that, copy .env.example and rename it as .env and put connection and chang
 <a name="step4"></a>
 ### Step 4: Install
 
-Firstable need to uncomment this line "extension=php_fileinfo.dll" in php.ini file.
-
-This project makes use of Bower and Laravel Elixir. Before triggering Elixir, you must first ensure that Node.js (included in homestead) is installed on your machine.
-
-    node -v
-
-Install dependencies listed in package.json with:
-
-    npm install --save-dev
-
-Retrieve frontend dependencies with Bower, compile SASS, and move frontend files into place:
-
-    gulp
-
 Now that you have the environment configured, you need to create a database configuration for it. For create database tables use this command:
 
     php artisan migrate
@@ -151,7 +137,7 @@ Inspired by and based on [andrew13's Laravel-4-Bootstrap-Starter-Site](https://g
 <a name="feature8"></a>
 ##How Starter Site is look like
 
-![Index](http://i57.tinypic.com/2yug28x.jpg)
+![Index](http://prntscr.com/f258sh)
 ![Login](http://i58.tinypic.com/r7p4et.jpg)
 ![Register new user](http://i61.tinypic.com/fvcz5x.jpg)
 ![Admin dashboard](http://i58.tinypic.com/b9g2g1.jpg)
