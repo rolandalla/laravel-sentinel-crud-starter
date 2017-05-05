@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Auth;
+use Sentinel;
 class RoleMiddleware
 {
     /**
@@ -16,7 +17,7 @@ class RoleMiddleware
     public function handle($request, Closure $next, $role)
     {        
         $roles = explode("|", $role);
-        if (!in_array(Auth::user()->role->name, $roles)) {
+        if (!in_array(Sentinel::getUser()->role->name, $roles)) {
             return redirect('/');
         }
         

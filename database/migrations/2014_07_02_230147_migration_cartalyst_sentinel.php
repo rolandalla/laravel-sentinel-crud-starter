@@ -101,6 +101,7 @@ class MigrationCartalystSentinel extends Migration
             $table->timestamp('last_login')->nullable();
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
+            $table->string('remember_token', 100)->nullable();
             $table->softDeletes();
             $table->timestamps();
 

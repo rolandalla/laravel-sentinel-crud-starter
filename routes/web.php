@@ -13,7 +13,7 @@
 Route::auth();
 Route::get('/', ['uses' => 'HomeController@home']);
 
-// Route::group(['middleware' => ['web', 'auth', 'permission'] ], function () {
+ Route::group(['middleware' => ['web', 'auth', 'permission'] ], function () {
         Route::get('dashboard', ['uses' => 'HomeController@dashboard', 'as' => 'home.dashboard']);
 
         //users
@@ -30,4 +30,4 @@ Route::get('/', ['uses' => 'HomeController@home']);
         Route::post('role/{role}/save', ['uses' => 'RoleController@save', 'as' => 'role.save']);
         Route::post('role/check', ['uses' => 'RoleController@check']);
         
-    // });
+ });

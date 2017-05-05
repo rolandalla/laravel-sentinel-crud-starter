@@ -191,8 +191,9 @@ class RoleController extends Controller
 
     public function save($id, Request $request){
         $role = Sentinel::findRoleById($id);
+        
         $role->permissions = [];
-        if(sizeof($request->permissions)>0){
+        if($request->permissions){
             foreach ($request->permissions as $permission) {
                 if(explode('.', $permission)[1] == 'create'){
                     $role->addPermission($permission);
@@ -204,33 +205,11 @@ class RoleController extends Controller
                 }
                 else{
                     $role->addPermission($permission);
-                }
-            }
+                }            
+            }  
         }
+        
         $role->save();
-
-        $groups = Role::where('is_group',1)
-                        ->where('child_roles', 'like', '%'.$role->id.'%')
-                        ->get();
-       if (!$groups->isEmpty() ) {
-
-            foreach ($groups as $group) {
-                $role = explode(',', $group->child_roles);
-                
-              foreach ($role as $id) {
-                 $role = Role::findOrFail($id);
-                 $roles[]=$role->permissions;
-                }
-
-                $permision = collect($roles);
-
-                $permisions = $permision->collapse();
-                $permisions_new= $permisions->toArray();
-                $update_group = Sentinel::findRoleById($group->id);
-                $update_group->permissions=$permisions_new;
-                $update_group->update();
-            }
-        }
         
         Session::flash('message', 'Success! Permissions are stored successfully.');
         Session::flash('status', 'success');

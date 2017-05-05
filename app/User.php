@@ -27,10 +27,12 @@ use Cartalyst\Sentinel\Roles\RoleInterface;
 use Illuminate\Database\Eloquent\Model;
 use Cartalyst\Sentinel\Users\UserInterface;
 use Illuminate\Database\Eloquent\SoftDeletes;
-
-class User extends Model implements RoleableInterface, PermissibleInterface, PersistableInterface, UserInterface
+use Illuminate\Contracts\Auth\CanResetPassword;
+use Illuminate\Notifications\Notifiable;
+use App\Notifications\ResetPassword;
+class User extends Model implements RoleableInterface, PermissibleInterface, PersistableInterface, UserInterface ,CanResetPassword
 {
-    use PermissibleTrait;
+    use PermissibleTrait,Notifiable;
      use SoftDeletes;
     /**
      * {@inheritDoc}
@@ -46,14 +48,42 @@ class User extends Model implements RoleableInterface, PermissibleInterface, Per
         'last_name',
         'first_name',
         'permissions',
+        'remember_token',
     ];
 
     /**
      * {@inheritDoc}
      */
     protected $hidden = [
-        'password',
+        'password','remember_token',
     ];
+
+    //Change Password
+    public function getRememberToken()
+    {
+        return $this->remember_token;
+    }
+
+    public function setRememberToken($value)
+    {
+        $this->remember_token = $value;
+    }
+
+    public function getRememberTokenName()
+    {
+        return 'remember_token';
+    }
+    public function getEmailForPasswordReset()
+    {
+         return $this->email;
+    }
+
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new ResetPassword($token));
+    }
+    //End change password
+
 
     /**
      * {@inheritDoc}
