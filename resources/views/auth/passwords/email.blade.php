@@ -1,40 +1,46 @@
 @extends('frontLayout.app')
-@section('title')
-Starter
-@stop
-@section('styles')
-@stop
 
 @section('content')
- <div class = "container">
-  <div class="wrapper">
-    @if (Session::has('message'))
-     <div class="alert alert-{{(Session::get('status')=='error')?'danger':Session::get('status')}} " alert-dismissable fade in id="sessions-hide">
-        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-       <strong>{{Session::get('status')}}!</strong> {!! Session::get('message') !!}
-      </div>
-    @endif 
-    {{ Form::open(array('url' => route('password.email'), 'class' => 'form-horizontal form-signin','files' => true)) }}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">Reset Password</div>
+                <div class="panel-body">
+                    @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
 
-            <div class="form-group row justify-content-center {{ $errors->has('email') ? 'has-error' : ''}} ">
-              <div class="col-12 col-lg-4">
-                {!! Form::email('email', null, ['class' => 'form-control edit_re','id'=>'Email-text-input-re','required'=>'required','oninvalid'=>"this.setCustomValidity('Dieses Feld wird benötigt')" , 'oninput'=>"setCustomValidity('')",'placeholder '=>'Email*']) !!}
-                  {!! $errors->first('email', '<p class="help-block">:message</p>') !!}
-              </div>
+                    <form class="form-horizontal" role="form" method="POST" action="{{ route('password.email') }}">
+                        {{ csrf_field() }}
+
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+
+                                @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary">
+                                    Send Password Reset Link
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-
-            <div class="form-group row justify-content-center">
-              <div class="col-12 col-lg-4 einkaufen_pch einkaufen_chtp">
-                <button type="submit" class="btn btn-primary btn_lo_ein">Reset Password</button>
-              </div>
-            </div>
-
-     {{ Form::close() }} 
-  </div>
+        </div>
+    </div>
 </div>
-@endsection
-
-@section('scripts')
-
-
 @endsection

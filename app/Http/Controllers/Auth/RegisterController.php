@@ -70,18 +70,17 @@ class RegisterController extends Controller
                 return Redirect::back()->withErrors($validation)->withInput();
          }
 
-        $user = Sentinel::register($request->all());
+         $user = Sentinel::register($request->all());
         //Activate the user ** 
          $activation = Activation::create($user);
          $activation = Activation::complete($user, $activation->code);
         //End activation
 
         if($user){
-
             $user->roles()->sync([2]); // 2 = client
             Session::flash('message', 'Registration is completed');
             Session::flash('status', 'success');
-           return redirect('login'); 
+           return redirect('/'); 
         }
          Session::flash('message', 'There was an error with the registration' );
          Session::flash('status', 'error');

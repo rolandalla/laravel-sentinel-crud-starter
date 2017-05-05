@@ -68,8 +68,13 @@
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
+                    @if (Sentinel::check())
+                        <a href="{{ url('/') }}">Home</a>
+                        {!! Form::open(['url' => url('logout'),'class'=>'form-inline']) !!}
+                           {!! csrf_field() !!}
+                          <button class="btn btn-primary btn-lg btn-block register-button" type="submit" >Logout</button>
+                       {!! Form::close() !!}
+                       
                     @else
                         <a href="{{ url('/login') }}">Login</a>
                         <a href="{{ url('/register') }}">Register</a>
@@ -80,7 +85,13 @@
             <div class="content">
                 <div class="title m-b-md">
                     Laravel Starter page
+                    
                 </div>
+                @if (Sentinel::check() )
+                     Your name : {{Sentinel::getUser()->first_name}} <br>
+                     Last name : {{Sentinel::getUser()->last_name}} <br>
+                     E-mail : {{Sentinel::getUser()->email}} <br>
+                    @endif
 
                 <div class="links">
                     <a href="https://github.com/roladn">GitHub</a>

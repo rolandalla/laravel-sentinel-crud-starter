@@ -15,7 +15,6 @@ Route::get('/', ['uses' => 'HomeController@home']);
 
  Route::group(['middleware' => ['web', 'auth', 'permission'] ], function () {
         Route::get('dashboard', ['uses' => 'HomeController@dashboard', 'as' => 'home.dashboard']);
-
         //users
         Route::resource('user', 'UserController');
         Route::get('user/{user}/permissions', ['uses' => 'UserController@permissions', 'as' => 'user.permissions']);

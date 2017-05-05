@@ -30,9 +30,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Contracts\Auth\CanResetPassword;
 use Illuminate\Notifications\Notifiable;
 use App\Notifications\ResetPassword;
-class User extends Model implements RoleableInterface, PermissibleInterface, PersistableInterface, UserInterface ,CanResetPassword
+use  Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Auth\Authenticatable as AuthenticableTrait;
+class User extends Model implements RoleableInterface, PermissibleInterface, PersistableInterface, UserInterface ,CanResetPassword,Authenticatable
 {
-    use PermissibleTrait,Notifiable;
+    use PermissibleTrait,Notifiable,AuthenticableTrait;
      use SoftDeletes;
     /**
      * {@inheritDoc}

@@ -32,6 +32,7 @@ Login
 
         <div class="login-register">
                 <a href="{{url('register')}}">Register</a>
+                <a href="{{url('password/reset')}}">Forget Password</a>
                 @if ($errors->has('global'))
                 <span class="help-block danger">
                     <strong style="color:red" >{{ $errors->first('global') }}</strong>
