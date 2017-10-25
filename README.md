@@ -172,3 +172,7 @@ php artisan crud:generate Posts --fields="title:string:required, body:text:requi
 
 If you are interested in  CRUD Generator then visit below links for more commands
 [Crud Generator](https://github.com/roladn/laravelcrud#commands)
+## Support on Beerpay
+Hey dude! Help me out for a couple of :beers:!
+
+[![Beerpay](https://beerpay.io/roladn/laravel-sentinel-crud-starter/badge.svg?style=beer-square)](https://beerpay.io/roladn/laravel-sentinel-crud-starter)  [![Beerpay](https://beerpay.io/roladn/laravel-sentinel-crud-starter/make-wish.svg?style=flat-square)](https://beerpay.io/roladn/laravel-sentinel-crud-starter?focus=wish)
