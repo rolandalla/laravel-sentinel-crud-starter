@@ -98,7 +98,7 @@ If you install on your localhost in folder laravelStartersite, you can type on w
 
 	http://localhost/laravelStartersite/public
 
-OR Run the command " php artisan serv ", and open on the browser the url you get in console :):
+OR Run the command " php artisan serve ", and open on the browser the url you get in console :):
 
 
 -----
